@@ -1,0 +1,18 @@
+{
+  "upstream": "https://github.com/trungkien1992/bch-close",
+  "commit": "8835382b306328b34912a3ff91fe61ed4168879d",
+  "files": [
+    {
+      "path": "src/reused/reconcile.ts",
+      "upstreamPath": "lib/reconcile.ts",
+      "identical": true,
+      "sha256": "9a038c05d6869dbc7a424ac60fa902f4e6e17531c72264c5d69febfb0ddbd156"
+    },
+    {
+      "path": "src/reused/blockchair.ts",
+      "upstreamPath": "lib/blockchair.ts",
+      "identical": true,
+      "sha256": "5091fd8851bf5b5806d8fc0b92195dff4163cba39c74d2747d2787e722ec76cb"
+    }
+  ]
+}

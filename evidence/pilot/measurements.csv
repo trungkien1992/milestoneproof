@@ -1,0 +1,1 @@
+participant_id,role,pair_id,case_type,order,manual_seconds,product_seconds,manual_errors,product_errors,manual_missing_refs,product_missing_refs,transcription_seconds,assistance_seconds,interruptions_seconds,unaided_review_pass,notes

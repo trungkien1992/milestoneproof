@@ -1,0 +1,74 @@
+{
+  "asOf": "2026-10-07",
+  "automated": {
+    "status": "passed",
+    "passed": 26,
+    "failed": 0,
+    "numberedSyntheticCases": 20,
+    "extraRegressions": 6,
+    "authors": "AI-assisted implementation team; not independently authored",
+    "runtime": "Node.js 20.11.1",
+    "command": "npm test"
+  },
+  "browser": {
+    "status": "checked_with_download_limitation",
+    "observed": [
+      "source and milestone authoring through visible forms",
+      "operator acceptance tied to selected version",
+      "wrong recipient received zero credit",
+      "wrong recipient review offered exclusion but no invoice assignment",
+      "excluded output and written reason stayed visible",
+      "duplicate reimport kept 4,000,000 satoshis confirmed",
+      "conflicting duplicate amount rejected atomically",
+      "pending output remained outstanding and missing acceptance visible",
+      "exact citation opened matching full source",
+      "valid read-only WebMCP response matched visible facts; unknown milestone rejected",
+      "prepared report, workspace and HTML read from visible file preview",
+      "workspace import restored expected balances",
+      "desktop four-card layout at 1280 CSS px without document overflow",
+      "mobile layout at 390 CSS px without document overflow"
+    ],
+    "downloadCompletion": "Not verified: in-app waitForEvent(download) and downloadMedia timed out. Prepared file contents, save link and visible copy fallback verified.",
+    "browserPreparedReportVerifier": {
+      "command": "node scripts/verify-report.mjs evidence/browser-report.json",
+      "consistent": true,
+      "sourceCount": 5,
+      "milestoneCount": 2
+    }
+  },
+  "sample": {
+    "dataset": "fictional",
+    "expectedSats": "8000000",
+    "reportedConfirmedSats": "4000000",
+    "pendingOrUnknownSats": "2000000",
+    "outstandingSats": "4000000",
+    "excessSats": "0",
+    "duplicateInputsIgnored": 1
+  },
+  "independentCases": {
+    "required": 20,
+    "completed": 0,
+    "status": "pending"
+  },
+  "interviews": {
+    "completed": 0,
+    "status": "pending"
+  },
+  "realPilots": {
+    "completed": 0,
+    "status": "pending"
+  },
+  "timeSavings": {
+    "pairedCases": 0,
+    "observedPercent": null,
+    "targetMedianPercent": 30,
+    "status": "unmeasured"
+  },
+  "eventEligibility": "organizer confirmation pending",
+  "prototypeSourceHashes": {
+    "src/engine.ts": "95558c243a662ede0a5fa71baab645c68f6eb4ea302078f493fd58f3c4628d16",
+    "tests/core.test.mjs": "8d06e9fc42f1df9cedbedd6942ff0404441abae0483b7f38665296bd6b43bf75",
+    "public/app.mjs": "1adfd0de68698def0ca712f3edbd4ef59d0e90092a75e00d6c1c56af9912b9f0",
+    "public/report-render.mjs": "2d8a56fc1753274d1ed167b0e2825ca7f5a219b0869f77b6d062717af620e34d"
+  }
+}

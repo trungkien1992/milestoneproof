@@ -1,0 +1,362 @@
+{
+  "schema": "milestoneproof-report/v1",
+  "engineVersion": "0.1.0",
+  "generatedAt": "2026-10-07T10:06:06.283Z",
+  "project": {
+    "name": "Website handoff",
+    "dataset": "fictional"
+  },
+  "inputSha256": "bacb1302b65bed646fd28cfb80e1b3d8e770d72b5c9acaceab9a160d40a92d7b",
+  "policies": {
+    "currency": "BCH coin units only; integer satoshis",
+    "payment": "At least one reported confirmation counts; imports do not prove blockchain inclusion.",
+    "acceptance": "Classification and timestamps entered by the operator; identity, authority, origin and legal effect are not authenticated.",
+    "amount": "Expected amount and recipient entered by the operator. Exact source excerpts are included for independent interpretation.",
+    "integrity": "SHA-256 of supplied UTF-8 text. No signature, trusted timestamp or on-chain anchoring.",
+    "privacy": "Included source text may be sensitive. Data stays local until the user exports or shares it."
+  },
+  "sources": [
+    {
+      "id": "agreement-v1",
+      "title": "Freelance agreement",
+      "kind": "agreement",
+      "version": "v1",
+      "text": "Fictional example — Freelance agreement v1\nMilestone M-01: Website handoff. Agreed amount: 0.05 BCH.\nMilestone M-02: Maintenance setup. Agreed amount: 0.02 BCH.",
+      "url": "",
+      "label": "S1",
+      "sha256": "0cf36f5e947ff173ee509d12ca22a633803473a7a25b65399fb6db8c74a4888e"
+    },
+    {
+      "id": "agreement-v2",
+      "title": "Updated agreement",
+      "kind": "agreement",
+      "version": "v2",
+      "text": "Fictional example — Freelance agreement v2\nMilestone M-01: Website handoff. Agreed amount: 0.06 BCH.\nMilestone M-02: Maintenance setup. Agreed amount: 0.02 BCH.\nThis is a supplied version label, not an authenticated signed amendment.",
+      "url": "",
+      "label": "S2",
+      "sha256": "8f6c57345b29119e1a9e41fcbf6d0046541ea39857244ad62f8d4010f86e19fa"
+    },
+    {
+      "id": "acceptance-01",
+      "title": "Client handoff message",
+      "kind": "acceptance",
+      "version": "2026-10-06",
+      "text": "Fictional example — Client message\nAccepted M-01 against agreement v2. Website handoff received.\nIdentity and authority are not authenticated.",
+      "url": "",
+      "label": "S3",
+      "sha256": "e29f2a81aca0c55eed77ee454f85c3194991f98132b94b5ca4323bdc6ef83cf4"
+    },
+    {
+      "id": "invoice-01",
+      "title": "Handoff invoice INV-01",
+      "kind": "invoice",
+      "version": "issued",
+      "text": "Fictional example — Invoice INV-01\nInvoice INV-01 for milestone M-01: 0.06 BCH.\nRecipient: 1BpEi6DfDAUFd7GtittLSdBeYJvcoaVggu",
+      "url": "",
+      "label": "S4",
+      "sha256": "96e1dd21d0fb29efb8a9b9b626b5abe029fd13f4dbc6894bcddc506a428f2880"
+    },
+    {
+      "id": "invoice-02",
+      "title": "Maintenance invoice INV-02",
+      "kind": "invoice",
+      "version": "issued",
+      "text": "Fictional example — Invoice INV-02\nInvoice INV-02 for milestone M-02: 0.02 BCH.\nRecipient: 1KXrWXciRDZUpQwQmuM1DbwsKDLYAYsVLR",
+      "url": "",
+      "label": "S5",
+      "sha256": "68d20659a4a4e046c52841abd8413b9e4c4699d9297dfdb3a3d3351a0373ff4a"
+    }
+  ],
+  "milestones": [
+    {
+      "id": "M-01",
+      "title": "Website handoff",
+      "invoiceId": "INV-01",
+      "expectedSats": "6000000",
+      "receivingAddress": "bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a",
+      "reportedConfirmedSats": "4000000",
+      "pendingOrUnknownSats": "0",
+      "outstandingSats": "2000000",
+      "excessSats": "0",
+      "paymentStatus": "Partial",
+      "agreement": {
+        "valid": true,
+        "sourceId": "agreement-v2",
+        "sourceTitle": "Updated agreement",
+        "version": "v2",
+        "quote": "Milestone M-01: Website handoff. Agreed amount: 0.06 BCH.",
+        "start": 43,
+        "end": 100,
+        "lineStart": 2,
+        "lineEnd": 2,
+        "offsetEncoding": "UTF-16 code units; start inclusive, end exclusive",
+        "reason": "Exact text match in supplied source; origin and authorship are not authenticated."
+      },
+      "invoice": {
+        "valid": true,
+        "sourceId": "invoice-01",
+        "sourceTitle": "Handoff invoice INV-01",
+        "version": "issued",
+        "quote": "Invoice INV-01 for milestone M-01: 0.06 BCH.",
+        "start": 35,
+        "end": 79,
+        "lineStart": 2,
+        "lineEnd": 2,
+        "offsetEncoding": "UTF-16 code units; start inclusive, end exclusive",
+        "reason": "Exact text match in supplied source; origin and authorship are not authenticated."
+      },
+      "acceptances": [
+        {
+          "agreementSourceId": "agreement-v2",
+          "statement": "accepted",
+          "recordedAt": "2026-10-06T07:30:00Z",
+          "ref": {
+            "sourceId": "acceptance-01",
+            "quote": "Accepted M-01 against agreement v2. Website handoff received."
+          },
+          "citation": {
+            "valid": true,
+            "sourceId": "acceptance-01",
+            "sourceTitle": "Client handoff message",
+            "version": "2026-10-06",
+            "quote": "Accepted M-01 against agreement v2. Website handoff received.",
+            "start": 35,
+            "end": 96,
+            "lineStart": 2,
+            "lineEnd": 2,
+            "offsetEncoding": "UTF-16 code units; start inclusive, end exclusive",
+            "reason": "Exact text match in supplied source; origin and authorship are not authenticated."
+          },
+          "versionMatches": true
+        }
+      ],
+      "issues": [],
+      "outputReferences": [
+        "0000000000000000000000000000000000000000000000000000000000000001:0"
+      ],
+      "acceptanceSummary": "Classified as accepted"
+    },
+    {
+      "id": "M-02",
+      "title": "Maintenance setup",
+      "invoiceId": "INV-02",
+      "expectedSats": "2000000",
+      "receivingAddress": "bitcoincash:qr95sy3j9xwd2ap32xkykttr4cvcu7as4y0qverfuy",
+      "reportedConfirmedSats": "0",
+      "pendingOrUnknownSats": "2000000",
+      "outstandingSats": "2000000",
+      "excessSats": "0",
+      "paymentStatus": "Pending",
+      "agreement": {
+        "valid": true,
+        "sourceId": "agreement-v2",
+        "sourceTitle": "Updated agreement",
+        "version": "v2",
+        "quote": "Milestone M-02: Maintenance setup. Agreed amount: 0.02 BCH.",
+        "start": 101,
+        "end": 160,
+        "lineStart": 3,
+        "lineEnd": 3,
+        "offsetEncoding": "UTF-16 code units; start inclusive, end exclusive",
+        "reason": "Exact text match in supplied source; origin and authorship are not authenticated."
+      },
+      "invoice": {
+        "valid": true,
+        "sourceId": "invoice-02",
+        "sourceTitle": "Maintenance invoice INV-02",
+        "version": "issued",
+        "quote": "Invoice INV-02 for milestone M-02: 0.02 BCH.",
+        "start": 35,
+        "end": 79,
+        "lineStart": 2,
+        "lineEnd": 2,
+        "offsetEncoding": "UTF-16 code units; start inclusive, end exclusive",
+        "reason": "Exact text match in supplied source; origin and authorship are not authenticated."
+      },
+      "acceptances": [],
+      "issues": [
+        {
+          "code": "acceptance_missing",
+          "message": "No acceptance record was supplied for this milestone."
+        }
+      ],
+      "outputReferences": [
+        "0000000000000000000000000000000000000000000000000000000000000002:0"
+      ],
+      "acceptanceSummary": "No usable record for selected version"
+    }
+  ],
+  "outputs": [
+    {
+      "key": "0000000000000000000000000000000000000000000000000000000000000001:0",
+      "txid": "0000000000000000000000000000000000000000000000000000000000000001",
+      "outputIndex": 0,
+      "amountSats": "4000000",
+      "address": "bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a",
+      "reportedConfirmations": 6,
+      "reportedObservedAt": "2026-10-07T03:00:00Z",
+      "evidenceKind": "fictional record",
+      "assignedInvoice": "INV-01",
+      "matchMethod": "Reference",
+      "explanation": "Explicit payment reference and receiving address agree.",
+      "reviewDecision": null,
+      "explorerUrl": null,
+      "inputReferences": [
+        "/receipts/0",
+        "/receipts/1"
+      ]
+    },
+    {
+      "key": "0000000000000000000000000000000000000000000000000000000000000002:0",
+      "txid": "0000000000000000000000000000000000000000000000000000000000000002",
+      "outputIndex": 0,
+      "amountSats": "2000000",
+      "address": "bitcoincash:qr95sy3j9xwd2ap32xkykttr4cvcu7as4y0qverfuy",
+      "reportedConfirmations": 0,
+      "reportedObservedAt": "2026-10-07T03:00:00Z",
+      "evidenceKind": "fictional record",
+      "assignedInvoice": "INV-02",
+      "matchMethod": "Reference",
+      "explanation": "Explicit payment reference and receiving address agree.",
+      "reviewDecision": null,
+      "explorerUrl": null,
+      "inputReferences": [
+        "/receipts/2"
+      ]
+    }
+  ],
+  "globalIssues": [],
+  "duplicateInputsIgnored": 1,
+  "unassignedOutputs": [],
+  "excludedOutputs": [],
+  "totals": {
+    "expectedSats": "8000000",
+    "reportedConfirmedSats": "4000000",
+    "pendingOrUnknownSats": "2000000",
+    "outstandingSats": "4000000",
+    "excessSats": "0"
+  },
+  "input": {
+    "schema": "milestoneproof-workspace/v1",
+    "project": {
+      "name": "Website handoff",
+      "dataset": "fictional"
+    },
+    "sources": [
+      {
+        "id": "agreement-v1",
+        "title": "Freelance agreement",
+        "kind": "agreement",
+        "version": "v1",
+        "text": "Fictional example — Freelance agreement v1\nMilestone M-01: Website handoff. Agreed amount: 0.05 BCH.\nMilestone M-02: Maintenance setup. Agreed amount: 0.02 BCH.",
+        "url": ""
+      },
+      {
+        "id": "agreement-v2",
+        "title": "Updated agreement",
+        "kind": "agreement",
+        "version": "v2",
+        "text": "Fictional example — Freelance agreement v2\nMilestone M-01: Website handoff. Agreed amount: 0.06 BCH.\nMilestone M-02: Maintenance setup. Agreed amount: 0.02 BCH.\nThis is a supplied version label, not an authenticated signed amendment.",
+        "url": ""
+      },
+      {
+        "id": "acceptance-01",
+        "title": "Client handoff message",
+        "kind": "acceptance",
+        "version": "2026-10-06",
+        "text": "Fictional example — Client message\nAccepted M-01 against agreement v2. Website handoff received.\nIdentity and authority are not authenticated.",
+        "url": ""
+      },
+      {
+        "id": "invoice-01",
+        "title": "Handoff invoice INV-01",
+        "kind": "invoice",
+        "version": "issued",
+        "text": "Fictional example — Invoice INV-01\nInvoice INV-01 for milestone M-01: 0.06 BCH.\nRecipient: 1BpEi6DfDAUFd7GtittLSdBeYJvcoaVggu",
+        "url": ""
+      },
+      {
+        "id": "invoice-02",
+        "title": "Maintenance invoice INV-02",
+        "kind": "invoice",
+        "version": "issued",
+        "text": "Fictional example — Invoice INV-02\nInvoice INV-02 for milestone M-02: 0.02 BCH.\nRecipient: 1KXrWXciRDZUpQwQmuM1DbwsKDLYAYsVLR",
+        "url": ""
+      }
+    ],
+    "milestones": [
+      {
+        "id": "M-01",
+        "title": "Website handoff",
+        "invoiceId": "INV-01",
+        "expectedBch": "0.06",
+        "address": "bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a",
+        "agreement": {
+          "sourceId": "agreement-v2",
+          "quote": "Milestone M-01: Website handoff. Agreed amount: 0.06 BCH."
+        },
+        "invoice": {
+          "sourceId": "invoice-01",
+          "quote": "Invoice INV-01 for milestone M-01: 0.06 BCH."
+        },
+        "acceptances": [
+          {
+            "agreementSourceId": "agreement-v2",
+            "statement": "accepted",
+            "recordedAt": "2026-10-06T07:30:00Z",
+            "ref": {
+              "sourceId": "acceptance-01",
+              "quote": "Accepted M-01 against agreement v2. Website handoff received."
+            }
+          }
+        ]
+      },
+      {
+        "id": "M-02",
+        "title": "Maintenance setup",
+        "invoiceId": "INV-02",
+        "expectedBch": "0.02",
+        "address": "bitcoincash:qr95sy3j9xwd2ap32xkykttr4cvcu7as4y0qverfuy",
+        "agreement": {
+          "sourceId": "agreement-v2",
+          "quote": "Milestone M-02: Maintenance setup. Agreed amount: 0.02 BCH."
+        },
+        "invoice": {
+          "sourceId": "invoice-02",
+          "quote": "Invoice INV-02 for milestone M-02: 0.02 BCH."
+        },
+        "acceptances": []
+      }
+    ],
+    "receipts": [
+      {
+        "txid": "0000000000000000000000000000000000000000000000000000000000000001",
+        "output_index": 0,
+        "amount_sats": "4000000",
+        "address": "bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a",
+        "invoice_id": "INV-01",
+        "confirmations": 6,
+        "observed_at": "2026-10-07T03:00:00Z"
+      },
+      {
+        "txid": "0000000000000000000000000000000000000000000000000000000000000001",
+        "output_index": 0,
+        "amount_sats": "4000000",
+        "address": "bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a",
+        "invoice_id": "INV-01",
+        "confirmations": 6,
+        "observed_at": "2026-10-07T03:00:00Z"
+      },
+      {
+        "txid": "0000000000000000000000000000000000000000000000000000000000000002",
+        "output_index": 0,
+        "amount_sats": "2000000",
+        "address": "bitcoincash:qr95sy3j9xwd2ap32xkykttr4cvcu7as4y0qverfuy",
+        "invoice_id": "INV-02",
+        "confirmations": 0,
+        "observed_at": "2026-10-07T03:00:00Z"
+      }
+    ],
+    "decisions": []
+  }
+}

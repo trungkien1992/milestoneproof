@@ -1,0 +1,6 @@
+{
+  "consistent": true,
+  "sourceCount": 5,
+  "milestoneCount": 2,
+  "meaning": "Included references, hashes and calculations are consistent. This does not authenticate records or blockchain inclusion."
+}

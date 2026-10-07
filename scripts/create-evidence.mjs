@@ -1,0 +1,14 @@
+import {writeFile} from 'node:fs/promises';
+import {webcrypto} from 'node:crypto';
+import {buildReport,verifyReport,validateBundle} from '../dist/engine.mjs';
+import {sampleBundle} from '../public/sample.mjs';
+import {reportHtml} from '../public/report-render.mjs';
+if(!globalThis.crypto)globalThis.crypto=webcrypto;
+const report=await buildReport(sampleBundle());
+await writeFile('evidence/fictional-workspace.json',JSON.stringify(validateBundle(sampleBundle()),null,2));
+await writeFile('evidence/fictional-report.json',JSON.stringify(report,null,2));
+await writeFile('evidence/fictional-evidence.html',reportHtml(report));
+await writeFile('evidence/report-verification.json',JSON.stringify(await verifyReport(report),null,2));
+await writeFile('evidence/duplicate-output.csv','txid,output_index,amount_bch,address,invoice_id,confirmations,observed_at\r\n'+`0000000000000000000000000000000000000000000000000000000000000001,0,0.04,1BpEi6DfDAUFd7GtittLSdBeYJvcoaVggu,INV-01,6,2026-10-07T03:00:00Z\r\n`);
+await writeFile('evidence/conflicting-output.csv','txid,output_index,amount_bch,address,invoice_id,confirmations,observed_at\r\n'+`0000000000000000000000000000000000000000000000000000000000000001,0,0.05,1BpEi6DfDAUFd7GtittLSdBeYJvcoaVggu,INV-01,6,2026-10-07T03:00:00Z\r\n`);
+console.log(JSON.stringify({dataset:'fictional',totals:report.totals,duplicateInputsIgnored:report.duplicateInputsIgnored,reportVerified:true},null,2));

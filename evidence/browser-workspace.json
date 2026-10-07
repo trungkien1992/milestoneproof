@@ -1,0 +1,123 @@
+{
+  "schema": "milestoneproof-workspace/v1",
+  "project": {
+    "name": "Website handoff",
+    "dataset": "fictional"
+  },
+  "sources": [
+    {
+      "id": "agreement-v1",
+      "title": "Freelance agreement",
+      "kind": "agreement",
+      "version": "v1",
+      "text": "Fictional example — Freelance agreement v1\nMilestone M-01: Website handoff. Agreed amount: 0.05 BCH.\nMilestone M-02: Maintenance setup. Agreed amount: 0.02 BCH.",
+      "url": ""
+    },
+    {
+      "id": "agreement-v2",
+      "title": "Updated agreement",
+      "kind": "agreement",
+      "version": "v2",
+      "text": "Fictional example — Freelance agreement v2\nMilestone M-01: Website handoff. Agreed amount: 0.06 BCH.\nMilestone M-02: Maintenance setup. Agreed amount: 0.02 BCH.\nThis is a supplied version label, not an authenticated signed amendment.",
+      "url": ""
+    },
+    {
+      "id": "acceptance-01",
+      "title": "Client handoff message",
+      "kind": "acceptance",
+      "version": "2026-10-06",
+      "text": "Fictional example — Client message\nAccepted M-01 against agreement v2. Website handoff received.\nIdentity and authority are not authenticated.",
+      "url": ""
+    },
+    {
+      "id": "invoice-01",
+      "title": "Handoff invoice INV-01",
+      "kind": "invoice",
+      "version": "issued",
+      "text": "Fictional example — Invoice INV-01\nInvoice INV-01 for milestone M-01: 0.06 BCH.\nRecipient: 1BpEi6DfDAUFd7GtittLSdBeYJvcoaVggu",
+      "url": ""
+    },
+    {
+      "id": "invoice-02",
+      "title": "Maintenance invoice INV-02",
+      "kind": "invoice",
+      "version": "issued",
+      "text": "Fictional example — Invoice INV-02\nInvoice INV-02 for milestone M-02: 0.02 BCH.\nRecipient: 1KXrWXciRDZUpQwQmuM1DbwsKDLYAYsVLR",
+      "url": ""
+    }
+  ],
+  "milestones": [
+    {
+      "id": "M-01",
+      "title": "Website handoff",
+      "invoiceId": "INV-01",
+      "expectedBch": "0.06",
+      "address": "bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a",
+      "agreement": {
+        "sourceId": "agreement-v2",
+        "quote": "Milestone M-01: Website handoff. Agreed amount: 0.06 BCH."
+      },
+      "invoice": {
+        "sourceId": "invoice-01",
+        "quote": "Invoice INV-01 for milestone M-01: 0.06 BCH."
+      },
+      "acceptances": [
+        {
+          "agreementSourceId": "agreement-v2",
+          "statement": "accepted",
+          "recordedAt": "2026-10-06T07:30:00Z",
+          "ref": {
+            "sourceId": "acceptance-01",
+            "quote": "Accepted M-01 against agreement v2. Website handoff received."
+          }
+        }
+      ]
+    },
+    {
+      "id": "M-02",
+      "title": "Maintenance setup",
+      "invoiceId": "INV-02",
+      "expectedBch": "0.02",
+      "address": "bitcoincash:qr95sy3j9xwd2ap32xkykttr4cvcu7as4y0qverfuy",
+      "agreement": {
+        "sourceId": "agreement-v2",
+        "quote": "Milestone M-02: Maintenance setup. Agreed amount: 0.02 BCH."
+      },
+      "invoice": {
+        "sourceId": "invoice-02",
+        "quote": "Invoice INV-02 for milestone M-02: 0.02 BCH."
+      },
+      "acceptances": []
+    }
+  ],
+  "receipts": [
+    {
+      "txid": "0000000000000000000000000000000000000000000000000000000000000001",
+      "output_index": 0,
+      "amount_sats": "4000000",
+      "address": "bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a",
+      "invoice_id": "INV-01",
+      "confirmations": 6,
+      "observed_at": "2026-10-07T03:00:00Z"
+    },
+    {
+      "txid": "0000000000000000000000000000000000000000000000000000000000000001",
+      "output_index": 0,
+      "amount_sats": "4000000",
+      "address": "bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a",
+      "invoice_id": "INV-01",
+      "confirmations": 6,
+      "observed_at": "2026-10-07T03:00:00Z"
+    },
+    {
+      "txid": "0000000000000000000000000000000000000000000000000000000000000002",
+      "output_index": 0,
+      "amount_sats": "2000000",
+      "address": "bitcoincash:qr95sy3j9xwd2ap32xkykttr4cvcu7as4y0qverfuy",
+      "invoice_id": "INV-02",
+      "confirmations": 0,
+      "observed_at": "2026-10-07T03:00:00Z"
+    }
+  ],
+  "decisions": []
+}

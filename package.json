@@ -1,0 +1,16 @@
+{
+  "name": "milestoneproof",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Reviewable evidence packets for BCH-paid freelance milestones.",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "npm run build && node --test tests/*.test.mjs",
+    "dev": "node scripts/serve.mjs",
+    "verify": "node scripts/verify-report.mjs"
+  },
+  "dependencies": {"bchaddrjs": "0.5.2"},
+  "devDependencies": {"esbuild": "0.25.11"},
+  "engines": {"node": ">=20"}
+}
